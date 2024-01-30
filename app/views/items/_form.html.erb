@@ -26,10 +26,14 @@
     <%= form.datetime_field :created_at %>
   </div>
 
-  <div>
+  <%
+=begin%>
+ <div>
     <%= form.label :authorId_id, style: "display: block" %>
     <%= form.text_field :authorId_id %>
-  </div>
+  </div> 
+<%
+=end%>
 
   <div>
     <%= form.submit %>
