@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :user, foreign_key: 'author_id'
+  belongs_to :user
   has_many :items
 
   validates :name, presence: true, length: { minimum: 2, maximum: 50 }
