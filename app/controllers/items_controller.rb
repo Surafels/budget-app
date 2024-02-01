@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show edit update destroy]
+  # before_action :set_item, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /items or /items.json
   def index
@@ -7,31 +8,30 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/1 or /items/1.json
-  def show; end
+  def show 
+  @item = Item.find(params[:id])
+
+  end
 
   # GET /items/new
   def new
     @item = Item.new
+    @categories = Category.includes(:items).all
   end
 
   # GET /items/1/edit
   def edit; end
 
-  # POST /items or /items.json
   def create
+    @categories = Category.all
     @item = Item.new(item_params)
-
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to item_url(@item), notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
+    @item.author = current_user
+    if @item.save
+      redirect_to category_path(@item.category_id)
+    else
+      render :new
     end
   end
-
   # PATCH/PUT /items/1 or /items/1.json
   def update
     respond_to do |format|
@@ -64,6 +64,8 @@ class ItemsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def item_params
-    params.require(:item).permit(:name, :amount, :created_at, :author_id)
+    # params.require(:item).permit(:name, :amount, :category_id)
+    params.require(:item).permit(:name, :amount, :category_id).merge(user_id: current_user.id)
+
   end
 end
