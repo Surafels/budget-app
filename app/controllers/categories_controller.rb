@@ -30,6 +30,7 @@ class CategoriesController < ApplicationController
       render :new
     end
   end
+
   def update
     respond_to do |format|
       if @category.update(category_params)
@@ -70,8 +71,7 @@ class CategoriesController < ApplicationController
     end
 
     category_totals
-
-  end  
+  end
   helper_method :calculate_totals
 
   # Only allow a list of trusted parameters through.
