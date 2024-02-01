@@ -1,14 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Users</h1>
-
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
+<div class="home_container">
+    <div class="content">
+        <h1 class="centered">Budget App</h1>
+    </div>
+    <div class="d-grid gap-2 mb-5">
+        <%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-primary btn-color' %>
+        <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn' %>
+    </div>
 </div>
-
-<%= link_to "New user", new_user_path %>
