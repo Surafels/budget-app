@@ -1,18 +1,4 @@
-<%
-=begin%>
- <h1>New category</h1>
-
-<%= render "form", category: @category %>
-
-<br>
-
 <div>
-  <%= link_to "Back to categories", categories_path %>
-</div> 
-<%
-=end%> 
-
-<div class="wrapper">
   <nav class="navbar app-bg-color bg-navy">
     <div class="container">
       <div class="navbar-nav mr-auto">
@@ -37,14 +23,15 @@
     </div>
 
     <div class="field m-3">
-      <%= form.text_field :icon, class: "form-control", placeholder: "bi bi-capsule", required: true, autocomplete: "off" %>
+      <%= form.text_field :icon, class: "form-control", placeholder: "bi bi-book", required: true, autocomplete: "off" %>
     </div>
 
-    <div class="mt-5 ps-5">
+    <div class="mt-4 ps-4">
       <p class="fw-bold">The following text is just added for instruction:</p>
       <p class="ms-3">For adding icon you can use bootstrap icons</p>
-      <p class="ms-3">Like: bi bi-capsule</p>
+      <p class="ms-3">Like: bi bi-shirt</p>
       <p class="ms-3">Like: bi bi-book</p>
+      <p class="ms-3">Like: bi bi-food </p>
     </div>
 
     <div class="footer text-center py-3 footer_fixed">
