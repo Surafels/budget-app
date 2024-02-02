@@ -3,22 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
-    
+
 .custom-btn {
   background-color: #5fb523;
   border-color: white;
   color: white;
 }
-    
+
 .custom-btn:hover {
   background-color: #4c9920;
   border-color: white;
 }
-    
+
 .bg-navy {
   background-color: #3778c2;
 }
-
-.signout-btn.show {
-    display: block !important;
-  }
