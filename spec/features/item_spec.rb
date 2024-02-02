@@ -6,7 +6,6 @@ RSpec.describe 'Item creation and view', type: :feature do
     @category = Category.create(name: 'Books', icon: 'bi bi-book', user_id: @user.id)
     @item = Item.new(name: 'Item one', amount: 40, category_id: @category.id, author_id: @user.id)
 
-
     visit new_user_session_path
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: @user.password
@@ -29,40 +28,5 @@ RSpec.describe 'Item creation and view', type: :feature do
       visit categories_path
       expect(page).to have_content('Total of all categories:')
     end
-
-
-    #   it 'displays the navigation bar for item creation' do
-    #     expect(page).to have_css('.navbar', text: 'New Item')
-    #     expect(page).to have_css('.bi-arrow-left-short')
-    #     expect(page).to have_css('.bi-search')
-    #   end
-
-    #   it 'allows user to create a new item' do
-    #     fill_in 'Name', with: @item.name
-    #     fill_in 'Amount', with: @item.amount
-    #     select @category.name, from: 'Category'
-    #     click_button 'Save'
-
-    #     expect(page).to have_content('Item was successfully created.')
-    #     expect(page).to have_content(@item.name)
-    #     expect(page).to have_content("$ #{@item.amount}")
-    #   end
-
-    #   it 'displays the navigation bar for item view' do
-    #     @item.save
-    #     visit item_path(@item)
-
-    #     expect(page).to have_css('.navbar', text: @item.name)
-    #     expect(page).to have_css('.bi-arrow-left-short')
-    #     expect(page).to have_css('.bi-search')
-    #   end
-
-    #   it 'displays the content of the created item' do
-    #     @item.save
-    #     visit item_path(@item)
-
-    #     expect(page).to have_content(@item.name)
-    #     expect(page).to have_content("$ #{@item.amount}")
-    #   end
   end
 end
