@@ -1,9 +1,41 @@
-<h1>New category</h1>
-
-<%= render "form", category: @category %>
-
-<br>
-
 <div>
-  <%= link_to "Back to categories", categories_path %>
+  <nav class="navbar app-bg-color bg-navy">
+    <div class="container">
+      <div class="navbar-nav mr-auto">
+        <a class="nav-link text-light" href="/"><i style="font-size: 1.8rem;" class="bi bi-arrow-left-short"></i></a>
+      </div>
+
+      <div class="navbar-nav mx-auto">
+        <a class="nav-link text-light">New Category</a>
+      </div>
+
+      <div class="navbar-nav ml-auto">
+        <a class="navbar-brand text-light" href="/"><i class="bi bi-search" style="font-size: 1.8rem;"></i></a>
+
+      </div>
+    </div>
+  </nav>
+
+  <%= form_with(model: @category, url: categories_path) do |form| %>
+
+    <div class="field m-3">
+      <%= form.text_field :name, class: "form-control", placeholder: "Name", required: true, autocomplete: "off" %>
+    </div>
+
+    <div class="field m-3">
+      <%= form.text_field :icon, class: "form-control", placeholder: "bi bi-book", required: true, autocomplete: "off" %>
+    </div>
+
+    <div class="mt-4 ps-4">
+      <p class="fw-bold">The following text is just added for instruction:</p>
+      <p class="ms-3">For adding icon you can use bootstrap icons</p>
+      <p class="ms-3">Like: bi bi-shirt</p>
+      <p class="ms-3">Like: bi bi-book</p>
+      <p class="ms-3">Like: bi bi-food </p>
+    </div>
+
+    <div class="footer text-center py-3 footer_fixed">
+      <%= form.submit "Save", class: 'btn btn-primary custom-btn' %>
+    </div>
+  <% end %>
 </div>
