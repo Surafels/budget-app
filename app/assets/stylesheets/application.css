@@ -1,22 +1,21 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.custom-btn {
-  background-color: #5fb523;
-  border-color: white; 
-  color: white;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   
-.custom-btn:hover {
-  background-color: #4c9920; 
-  border-color: white; 
-}
-
-.bg-navy {
-  background-color: #3778c2;
-}
+  .custom-btn {
+    background-color: #5fb523;
+    border-color: white;
+    color: white;
+  }
   
+  .custom-btn:hover {
+    background-color: #4c9920;
+    border-color: white;
+  }
+  
+  .bg-navy {
+    background-color: #3778c2;
+  }
   
