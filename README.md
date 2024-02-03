@@ -33,7 +33,8 @@ The **Budget app** The BudgetApp is a mobile web application designed to help yo
 
 ## Deployment 
 
-[render deploy](https://budget-app-0bbh.onrender.coma/)
+[render deploy](https://budget-app-0bbh.onrender.com)
+
 
 ## Video explanation
 
