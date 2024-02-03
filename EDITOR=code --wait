@@ -1,0 +1,6 @@
+No $VISUAL or $EDITOR to open file in. Assign one like this:
+
+VISUAL="mate --wait" bin/rails credentials:edit
+
+For editors that fork and exit immediately, it's important to pass a wait flag;
+otherwise, the file will be saved immediately with no chance to edit.
