@@ -37,7 +37,7 @@ The **Budget app** The BudgetApp is a mobile web application designed to help yo
 
 ## Video explanation
 
-[Video explanation]()
+[Video explanation](https://www.loom.com/share/75741165b4184d069328dd9a2f274c41?sid=6b7f2f00-6099-495c-bbbb-7587950e13d4)
 
 ## 🛠 Built With <a name="built-with"></a>
 
