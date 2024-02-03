@@ -5,6 +5,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [ Video-Demo](#video-demo)
   - [ Deployment](#deployment)
   - [ Video Explanation](#video-explanation)
   - [🛠 Built With](#built-with)
@@ -26,6 +27,17 @@
 # 📖 [Budget app] <a name="about-project"></a>
 
 The **Budget app** The BudgetApp is a mobile web application designed to help you effectively manage your budget. With this app, you can easily keep track of your transactions and categorize them, allowing you to gain insights into your spending habits. It enables you to monitor how much money you have spent and on what expenses.
+
+## Video Demo <a name="video-demo"></a>
+[video demo](https://drive.google.com/file/d/1WRbTmMTHdQDJpThucKnnXOEF6tEjDoHI/view?usp=sharing)
+
+## Deployment 
+
+[render deploy](https://my-budget-app-qq58.onrender.com)
+
+## Video explanation
+
+[Video explanation]()
 
 ## 🛠 Built With <a name="built-with"></a>
 
