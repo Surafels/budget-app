@@ -1,0 +1,45 @@
+ <div>
+  <nav class="navbar app-bg-color bg-navy">
+    <div class="container">
+      <div class="navbar-nav mr-auto">
+        <a class="nav-link  text-light" href="/"><i style="font-size: 1.8rem;" class="bi bi-arrow-left-short"></i></a>
+
+      </div>
+
+      <div class="navbar-nav mx-auto">
+        <a class="nav-link text-light"><%= @category.name %> </a>
+      </div>
+
+      <div class="navbar-nav ml-auto">
+                <a class="navbar-brand text-light" href="#"><i class="bi bi-search" style="font-size: 1.8rem;"></i></a>
+
+      </div>
+    </div>
+  </nav>
+
+    <div class="d-flex flex-row text-center mt-3 ms-3">
+      <p class="ms-2">Total amount of <%=@category.name %> </p>
+      <p class="ms-2">$ <%= @total_amount %> </p>
+    </div>
+
+    <% @items.each do |item| %>
+      <%
+=begin%>
+ <%= link_to item_path(item), class: 'link' do %> 
+<%
+=end%>
+        <div class="mx-3">
+          <h5  class=""><%= item.name %></h5>
+          <p>$ <%= item.amount %> </p>
+        </div>
+      <%
+=begin%>
+ <% end %> 
+<%
+=end%>
+    <% end %>
+
+  <div class="footer text-center">
+    <%= link_to 'Add New Item', new_item_path, class: 'btn btn-primary footer-button custom-btn' %>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-navy">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Categories</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <% if current_user %>
+            <li class="nav-item mt-3">
+              <%= link_to "Hi, #{current_user.email}", edit_user_registration_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item mt-3 signout-btn">
+              <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="total-categories mb-4">
+          <h4>Total of all categories:</h4>
+          <% if @categories.present? %>
+            <p class="fw-bold">$ <%= @total_amount %> </p>
+          <% end %>
+        </div>
+
+        <% @categories.each do |category| %>
+          <%= link_to category_path(category), class: 'link' do %> 
+            <div class="category-card mb-3 p-3 rounded bg-light">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <i class="<%= category.icon %> text-primary" style="font-size: 2rem;"></i>
+                </div>
+                <div class="col">
+                  <h5 class="mt-0"><%= category.name %></h5>
+                  </div>
+                                  <div class="col">
+
+                  <p class="fw-bold mb-0">Total amount: $<%= @category_totals[category.name] || 0 %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer  text-center py-4">
+    <%
+=begin%>
+ <%= link_to 'Add New Category', new_category_path, class: 'btn btn-primary' %> 
+<%
+=end%>
+  <div class="fixed-bottom text-center py-4">
+
+    <%= link_to 'Add New Category', new_category_path, class: 'btn btn-primary custom-btn' %>
+
+  </div>
+</div>

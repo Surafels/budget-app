@@ -1,0 +1,26 @@
+  <nav class="navbar navbar-expand-lg navbar-light bg-navy container-fluid">
+    <a class="navbar-brand text-light" href="/"><i class="bi bi-arrow-left-short" style="font-size: 1.8rem;"></i></a>
+    <a class="navbar-brand mx-auto text-light" href="#">New Item</a>
+    <a class="navbar-brand text-light" href="#"><i class="bi bi-search" style="font-size: 1.8rem;"></i></a>
+  </nav>
+<div class="container">
+
+  <%= form_with(model: @item, url: items_path, local: true) do |form| %>
+
+    <div class="form-group m-3">
+      <%= form.text_field :name, class: "form-control", placeholder: "Name", required: true, autocomplete: "off" %>
+    </div>
+
+    <div class="form-group m-3">
+      <%= form.number_field :amount, class: "form-control", placeholder: "Amount", required: true , autocomplete: "off" %>
+    </div>
+
+    <div class="form-group m-3">
+      <%= form.collection_select(:category_id, Category.where(user: current_user).all, :id, :name, { prompt: "Select a Category" }, { class: "form-control", required: true, data: { validation: "required" }})  %>
+    </div>
+
+    <div class="text-center py-3">
+      <%= form.submit "Save", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
