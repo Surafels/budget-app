@@ -42,7 +42,9 @@ The **Budget app** The BudgetApp is a mobile web application designed to help yo
 
 ## 🛠 Built With <a name="built-with"></a>
 
-Ruby, Ruby on Rails, Postgresql, Visual Studia Code
+- Ruby
+- Ruby on Rails
+- Postgresql 
 
 ### Tech Stack <a name="tech-stack"></a>
 
